@@ -1,0 +1,4 @@
+decaf:  scanner.l parser.y
+        bison -td parser.y --verbose
+        flex scanner.l
+        g++ -g -o $@ parse.tab.c lex.yy.c ast.h -lfl
